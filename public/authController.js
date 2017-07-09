@@ -11,10 +11,7 @@ var LoginController = {
   getPassword() {
     return document.getElementById("password").value;
   },
-  validateEntry(user, password) {
-    user = user || this.getUser();
-    password = password || this.getUser();
-
+  validateEntry(user = this.getUser(), password = this.getPassword()) {
     if (!(user && password)) {
       return this.failure("You must enter a username and a password");
     }
